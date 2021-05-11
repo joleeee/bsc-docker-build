@@ -1,0 +1,12 @@
+services:
+        bsc-node:
+          image: joleman/bsc
+          network_mode: "host"
+          command:
+                  --config /data/config.toml
+                  --datadir /node
+                  --cache 16384
+                  --nat none
+          volumes:
+                  - ./node:/node
+                  - ./data:/data

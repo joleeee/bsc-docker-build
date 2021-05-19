@@ -1,0 +1,2 @@
+#!/usr/bin/sh
+docker exec -it $(docker ps | grep bsc-docker-build_bsc-node_run | cut -c 0-12) "$@"

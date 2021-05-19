@@ -9,5 +9,5 @@ unzip mainnet.zip &&
 cp genesis.json $bef &&
 cd $bef &&
 
-geth --datadir ./node init genesis.json &&
+./geth --datadir ./node init genesis.json &&
 rm genesis.json

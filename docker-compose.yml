@@ -7,7 +7,17 @@ services:
                         --datadir /node
                         --cache 12288
                         --nat none
-                        --snapshot=false
+                        #--snapshot=false
+                volumes:
+                        - ./node:/node
+                        - ./data:/data
+                restart: always
+        bsc-prune:
+                image: joleman/bsc
+                network_mode: "host"
+                command:
+                        --datadir /node
+                        snapshot prune-state
                 volumes:
                         - ./node:/node
                         - ./data:/data

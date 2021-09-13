@@ -8,7 +8,7 @@ output_log="/var/log/jole-bsc-geth"
 error_log="$output_log"
 command_background="yes"
 pidfile="/var/run/$SVCNAME.pid"
-retry="300"
+retry="SIGINT/300"
 
 start_pre() {
 	# we shouldn't have to mount stuff here

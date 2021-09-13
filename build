@@ -1,7 +1,0 @@
-#!/usr/bin/bash
-cd $(mktemp -d) &&
-git clone https://github.com/binance-chain/bsc &&
-cd bsc &&
-git checkout upgrade_1.10.2 &&
-doas docker build . -t joleman/bsc:latest &&
-doas docker push joleman/bsc:latest

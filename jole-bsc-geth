@@ -1,0 +1,30 @@
+#!/sbin/openrc-run
+
+description="Jole's script to start bsc geth"
+command="/usr/bin/docker-compose"
+command_args="run bsc-node"
+directory="/root/bsc-docker-build"
+output_log="/var/log/jole-bsc-geth"
+error_log="$output_log"
+command_background="yes"
+pidfile="/var/run/$SVCNAME.pid"
+retry="300"
+
+start_pre() {
+	# we shouldn't have to mount stuff here
+	# but for some reason it isn't automatically
+	# mounted so i'll just do it here for ease
+
+	if [ "$(findmnt /array)" == "" ] ; then
+		mount /array
+	fi
+
+	if [ "$(findmnt /array)" == "" ] ; then
+		# fail if we haven't mounted (to) /array
+		# not sure if this is necesarry but hey
+		return 1
+	else
+		return 0
+	fi
+}
+

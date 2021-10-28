@@ -4,8 +4,7 @@ cp -f config.toml data/ &&
 
 bef=$(pwd)
 cd $(mktemp -d) &&
-wget $(curl -s https://api.github.com/repos/binance-chain/bsc/releases/latest |grep browser_ |grep mainnet |cut -d\" -f4) &&
-unzip mainnet.zip &&
+wget https://raw.githubusercontent.com/kcc-community/kcc/kcc/genesis-mainnet.json -O genesis.json &&
 cp genesis.json $bef &&
 cd $bef &&
 

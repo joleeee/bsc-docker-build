@@ -1,6 +1,6 @@
 services:
-        bsc-node:
-                image: joleman/bsc
+        kcc-node:
+                image: joleman/kcc
                 network_mode: "host"
                 command:
                         --config /data/config.toml
@@ -12,8 +12,8 @@ services:
                         - ./node:/node
                         - ./data:/data
                 restart: always
-        bsc-prune:
-                image: joleman/bsc
+        kcc-prune:
+                image: joleman/kcc
                 network_mode: "host"
                 command:
                         --datadir /node

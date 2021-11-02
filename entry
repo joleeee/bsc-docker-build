@@ -1,2 +1,2 @@
 #!/usr/bin/sh
-docker exec -it $(docker ps | grep bsc-docker-build_ | cut -c 0-12) "$@"
+docker exec -it $(docker ps | grep eth-docker-build_ | cut -c 0-12) "$@"

@@ -1,10 +1,10 @@
 #!/sbin/openrc-run
 
-description="Jole's script to start bsc geth"
+description="Jole's script to start eth geth"
 command="/usr/bin/docker-compose"
-command_args="run bsc-node"
-directory="/root/bsc-docker-build"
-output_log="/var/log/jole-bsc-geth"
+command_args="run eth-node"
+directory="/root/eth-docker-build"
+output_log="/var/log/jole-eth-geth"
 error_log="$output_log"
 command_background="yes"
 pidfile="/var/run/$SVCNAME.pid"

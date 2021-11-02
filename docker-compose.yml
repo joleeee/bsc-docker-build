@@ -1,19 +1,19 @@
 services:
-        bsc-node:
-                image: joleman/bsc
+        eth-node:
+                image: joleman/eth
                 network_mode: "host"
                 command:
                         --config /data/config.toml
                         --datadir /node
-                        --cache 12288
+                        --cache 24576
                         --nat none
                         #--snapshot=false
                 volumes:
                         - ./node:/node
                         - ./data:/data
                 restart: always
-        bsc-prune:
-                image: joleman/bsc
+        eth-prune:
+                image: joleman/eth
                 network_mode: "host"
                 command:
                         --datadir /node

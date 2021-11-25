@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 cd $(mktemp -d) &&
-git clone https://github.com/binance-chain/bsc &&
-cd bsc &&
-git checkout upgrade_1.10.2 &&
-docker build . -t joleman/bsc:latest &&
-docker push joleman/bsc:latest
+git clone https://github.com/maticnetwork/bor &&
+cd bor &&
+git checkout 6f5915363e57c61457d35c9f492628a54b0ad110 &&
+docker build . -t joleman/bor:latest &&
+docker push joleman/bor:latest

@@ -1,20 +1,19 @@
 services:
-        bsc-node:
-                image: joleman/bsc
+        bor-node:
+                image: joleman/bor
                 network_mode: "host"
                 command:
                         --config /data/config.toml
                         --datadir /node
-                        --cache 12288
+                        --cache 8192
                         --nat none
                         #--snapshot=false
                 volumes:
                         - ./node:/node
                         - ./data:/data
                 restart: always
-        bsc-prune:
-                image: joleman/bsc
-                network_mode: "host"
+        bor-prune:
+                image: joleman/bor network_mode: "host"
                 command:
                         --datadir /node
                         snapshot prune-state

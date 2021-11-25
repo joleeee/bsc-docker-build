@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+cd $(mktemp -d) &&
+git clone https://github.com/maticnetwork/heimdall &&
+cd heimdall &&
+git checkout v2 &&
+cp docker/Dockerfile . &&
+docker build . -t joleman/heimdall:latest &&
+docker push joleman/heimdall:latest

@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+#cp -f config.toml data/ &&
+
+bef=$(pwd)
+cd $(mktemp -d) &&
+wget https://raw.githubusercontent.com/maticnetwork/launch/master/mainnet-v1/sentry/sentry/heimdall/config/genesis.json &&
+cp genesis.json $bef &&
+cd $bef &&
+
+./geth --datadir ./node init genesis.json &&
+rm genesis.json

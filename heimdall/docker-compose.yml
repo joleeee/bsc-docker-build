@@ -1,0 +1,27 @@
+services:
+        heimdall:
+                image: joleman/heimdall
+                network_mode: "host"
+                command:
+                        --home /node
+                        --help
+                        #--config /data/config.toml
+                        #--datadir /node
+                        #--cache 8192
+                        #--nat none
+                        #--snapshot=false
+                volumes:
+                        - ./node:/node
+                restart: always
+        heimdall-setup:
+                image: joleman/heimdall
+                network_mode: "host"
+                command:
+                        --home /node
+                        #--config /data/config.toml
+                        #--cache 8192
+                        #--nat none
+                        #--snapshot=false
+                volumes:
+                        - ./node:/node
+                restart: always

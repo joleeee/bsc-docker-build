@@ -1,5 +1,6 @@
-#!/usr/bin/bash
-export v="v1.1.7" &&
+#!/bin/bash
+v="v1.1.8"
+
 cd $(mktemp -d) &&
 git clone https://github.com/binance-chain/bsc &&
 cd bsc &&
